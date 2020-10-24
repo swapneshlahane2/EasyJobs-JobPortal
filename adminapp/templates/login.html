@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{%static 'css/login.css' %}">
+    <center><h1 style=color:white> Login Here</h1></center>
+    <div class="container">
+    <div class="container">
+      <div class="jumbotron">
+            <center><form class="" action="/login/" method="POST"> {% csrf_token %}
+                <h2>{{form.as_p}} </h2>
+          <button type="submit" name="button" class="btn btn-success btn-lg">LOGIN</button>
+        </form> <br> <br>
+        <a href="/home/" class="btn btn-light">Back</a></center>
+      </div>
+      </div>
+
+    </div>
+
+{% endblock %}

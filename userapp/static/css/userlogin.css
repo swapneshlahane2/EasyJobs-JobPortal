@@ -1,0 +1,18 @@
+body{
+  background-image: url("https://www.wallpapertip.com/wmimgs/84-842371_globe-professional-background-images-hd-professional-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron {
+   background: rgb(200, 54, 54); /* This is for ie8 and below */
+   background: rgba(200, 54, 54, 0.5);
+}
+
+h2{
+  color:white
+}
+
+h4{
+  color:white
+}

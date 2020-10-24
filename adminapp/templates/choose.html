@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{%static 'css/choose.css' %}">
+<br><br><br><br>
+    <div class="container">
+    <div class="container">
+      <div class="jumbotron">
+        <center><h1>Choose The Stream</h1> <br><br>
+    <a href="/readitjob/{{request.user.id}}/" class='btn btn-primary btn-lg'>IT Jobs</a> &nbsp&nbsp&nbsp&nbsp
+    <a href="/readciviljob/{{request.user.id}}/" class='btn btn-primary btn-lg'>CIVIL Jobs</a> &nbsp&nbsp&nbsp&nbsp
+    <a href="/readmechjob/{{request.user.id}}/" class='btn btn-primary btn-lg'>MECHANICAL Jobs</a> <br> <br> <br>
+
+  <form class="" action="/logout/" method="POST"> {% csrf_token %}
+    <button type="submit" name="button" class='btn btn-danger'>LOGOUT</button>
+  </form> <br>
+  <a href="/home/" class='btn btn-warning'>Back</a> </center>
+</div>
+</div>
+</div>
+
+{% endblock %}

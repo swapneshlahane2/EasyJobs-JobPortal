@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <b>HR: {{request.user.username}}</b> <br><br>
+    <h1 align=center> WE ARE HIRING</h1>
+    <table border=5>
+      <thead>
+        <th>COMPANY</th>
+        <th>TITLE</th>
+        <th>DESIGNATION</th>
+        <th>EXPERIENCE</th>
+        <th>PACKAGE</th>
+        <th>VACCANCY</th>
+        <th>DATE FROM</th>
+        <th>DATE TO</th>
+        <th>LOCATION</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+        <th>VIEW</th>
+
+      </thead>
+
+    {% for x in obj %}
+      <tr>
+          <td>{{x.company}}</td>
+          <td>{{x.title}}</td>
+          <td>{{x.desgination}}</td>
+          <td>{{x.experience}}</td>
+          <td>{{x.package}}</td>
+          <td>{{x.vaccancy}}</td>
+          <td>{{x.date_from}}</td>
+          <td>{{x.date_to}}</td>
+          <td>{{x.location}}</td>
+          <td><a href="{% url 'updateitjob' x.id %}">UPDATE</a></td>
+          <td><a href="{% url 'deleteitjob' x.id %}">DELETE</a></td>
+          <td><a href="{% url 'resumeit' x.id %}">VIEW</a></td>
+        </tr>
+    {% endfor %}
+  </table> <br> <br><br> <br>
+  <form class="" action="/additjob/" method="POST"> {% csrf_token %}
+    <button type="submit" name="button">Add Job</button>
+  </form>
+  <br> <br>
+  <form class="" action="/logout/" method="POST"> {% csrf_token %}
+    <button type="submit" name="button">LOGOUT</button>
+  </form> <br>
+
+{% endblock %}

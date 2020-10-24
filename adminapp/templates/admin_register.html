@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<br><br><br>
+<link rel="stylesheet" href="{%static 'css/login.css' %}">
+
+    <div class="container">
+      <div class="jumbotron">
+      <form class="" action="/register/" method="POST">{% csrf_token %}
+        <h4>{{ form.as_p }} </h4>
+      <button align=left type="submit" name="button" class="btn btn-success">REGISTER</button> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="/home/" class="btn btn-light" >Back</a>
+      </form>
+    </div>
+    </div>
+
+{% endblock %}

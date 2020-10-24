@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <form class="" action="/address/" method="POST"> {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" name="button">Add Address</button>
+    </form>
+    <br> <br>
+    <form class="" action="/logout/" method="POST"> {% csrf_token %}
+      <button type="submit" name="button">LOGOUT</button>
+    </form> <br>
+
+{% endblock %}

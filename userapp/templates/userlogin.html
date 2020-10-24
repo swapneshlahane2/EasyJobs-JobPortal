@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+              <div style='background-color:black; color: red;'>
+                <h4><i>{% if messages %}
+                    {% for msg in messages %}
+                        {{msg}} <br>
+                        {% endfor %}
+                {% endif %} </i></h4>
+                </div>
+  <link rel="stylesheet" href="{%static 'css/userlogin.css' %}">
+      <div class="container">
+      <div class="container">
+        <div class="jumbotron">
+          <center><h2 style='background-color:black; color:yellow'>Login Here</h2><br>
+          <form class="" action="/userlogin/" method="POST"> {% csrf_token %}
+            <h4>Username: <input type="text" name="username" value=""> <br> <br>
+            Password: <input type="password" name="password" value=""> </h4> <br> <br>
+            <button type="submit" class="btn btn-success btn-lg" name="button">USER LOGIN</button>  &nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="/home/" class="btn btn-light" >Back</a>
+          </form>
+        </div>
+      </div>
+</div>
+{% endblock %}

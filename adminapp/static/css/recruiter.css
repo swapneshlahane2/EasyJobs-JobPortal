@@ -1,0 +1,15 @@
+body{
+  background-image: url("https://www.hireright.com/blog/wp-content/uploads/2015/02/truck-driver-shortage-recruitment-1200x800.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.jumbotron {
+   background: 	rgb(153, 102, 102); /* This is for ie8 and below */
+   background: rgba(200, 54, 54, 0.5);
+}
+
+h2{
+  color:black;
+}

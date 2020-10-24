@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div style='background-color:black; color: red;'>
+  <center>{% if messages %}
+      {% for msg in messages %}
+          {{msg}} <br>
+          {% endfor %}
+  {% endif %}</center>
+  </div>
+<table border=5>
+  <thead>
+    <th>COMPANY</th>
+    <th>TITLE</th>
+    <th>DESIGNATION</th>
+    <th>EXPERIENCE</th>
+    <th>PACKAGE</th>
+    <th>VACCANCY</th>
+    <th>DATE FROM</th>
+    <th>DATE TO</th>
+    <th>LOCATION</th>
+    <th>Apply</th>
+  </thead>
+
+{% for x in data %}
+  <tr>
+      <td>{{x.company}}</td>
+      <td>{{x.title}}</td>
+      <td>{{x.desgination}}</td>
+      <td>{{x.experience}}</td>
+      <td>{{x.package}}</td>
+      <td>{{x.vaccancy}}</td>
+      <td>{{x.date_from}}</td>
+      <td>{{x.date_to}}</td>
+      <td>{{x.location}}</td>
+      <td><a href="/it_apply/{{x.id}}">Apply Now</a></td>
+    </tr>
+{% endfor %}
+<table> <br><br><br>
+  <form class="" action="/userlogout/" method="POST"> {% csrf_token %}
+    <button type="submit" name="button">LOGOUT</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <b>HR: {{request.user.username}}</b>
+    <form class="" action="{% url 'addmechjob' %}" method="POST"> {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" name="button">Add Job</button>
+    </form> <br> <br>
+    <form class="" action="/logout/" method="POST"> {% csrf_token %}
+      <button type="submit" name="button">LOGOUT</button>
+    </form> <br>
+
+{% endblock %}
